@@ -1,43 +1,46 @@
-```markdown
-# Simple Chat App
+# 💬 Simple Chat App
 
-![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=111827)
-![Vite](https://img.shields.io/badge/Vite-6-646cff?style=for-the-badge&logo=vite&logoColor=white)
-![WebSocket](https://img.shields.io/badge/WebSocket-Realtime-22c55e?style=for-the-badge)
-![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white)
+<p align="center">
+  <h3 align="center">A minimal real-time room-based chat application built with React, Vite, Node.js and WebSockets.</h3>
 
-A simple realtime room-based chat app built with React, Vite, Node.js, and WebSockets.
+  <p align="center">
+    Create a room, share the Room ID, and chat instantly with anyone connected to the same room.
+  </p>
+</p>
 
-Create a room, share the room ID, and chat instantly with anyone who joins the same room.
+---
 
-## Live Flow
+## 🛠️ Tech Stack
 
-```text
-Create room -> Copy room ID -> Friend joins room -> Send messages in realtime
-```
+<p align="center">
 
-## Features
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white"/>
+<img src="https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=node.js&logoColor=white"/>
 
-- Random room ID generated on the start screen
-- Join an existing room by entering a room ID
-- Realtime chat using WebSockets
-- Online users list per room
-- Copy room ID button
-- Leave room and join another room
-- Responsive dark UI
-- Production build served by the Node server
-- Ready for Render deployment
+</p>
 
-## Tech Stack
+---
 
-| Part | Tech |
-| --- | --- |
-| Frontend | React + TypeScript + Vite |
-| Backend | Node.js HTTP server |
-| Realtime | WebSocket (`ws`) |
-| Deploy | Render Web Service |
+# ✨ Features
 
-## Project Structure
+- 🚀 Real-time messaging using WebSockets
+- 🏠 Create private chat rooms
+- 🔑 Join existing rooms using a Room ID
+- 👥 Online users counter
+- 📋 Copy Room ID
+- 💬 Instant message broadcasting
+- 🌙 Modern dark interface
+- 📱 Responsive layout
+- ⚡ Fast Vite frontend
+- 🔄 Leave and join different rooms
+- 🌐 Production-ready Node.js server
+
+---
+
+# 📂 Project Structure
 
 ```text
 .
@@ -45,109 +48,170 @@ Create room -> Copy room ID -> Friend joins room -> Send messages in realtime
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
+│
 ├── server.js
 ├── vite.config.ts
-├── index.html
 ├── package.json
 ├── tsconfig.json
+├── index.html
 ├── render.yaml
 └── README.md
 ```
 
-## Run Locally
+---
 
-Install dependencies:
+# 🚀 Getting Started
+
+## Install
 
 ```bash
 npm install
 ```
 
-Build the frontend and start the chat server:
+---
 
-```bash
-npm run start
-```
+## Development
 
-Open the app:
-
-```text
-http://127.0.0.1:8080
-```
-
-## Development Mode
-
-Start the backend:
+Start the backend
 
 ```bash
 npm run server
 ```
 
-In another terminal, start Vite:
+Open another terminal
 
 ```bash
 npm run dev
 ```
 
-Open:
+Frontend
 
-```text
-http://127.0.0.1:5173
+```
+http://localhost:5173
 ```
 
-The Vite dev server proxies `/ws` to the backend on port `8080`.
+Backend
 
-## How To Use
-
-1. Enter your name.
-2. Use the generated room ID or click **New** to generate another one.
-3. Share the room ID with a friend.
-4. Your friend enters the same room ID.
-5. Start chatting in realtime.
-
-## Deploy On Render
-
-This app needs a Node server because WebSockets do not work on a plain static host like GitHub Pages.
-
-Use **Render Web Service**, not Static Site.
-
-Render settings:
-
-```text
-Runtime: Node
-Build Command: npm install && npm run build
-Start Command: npm run server
+```
+http://localhost:8080
 ```
 
-The included `render.yaml` can also configure this automatically.
+---
 
-## Git Commands
+## Production
+
+Build and start
 
 ```bash
-git add package.json package-lock.json tsconfig.json index.html server.js vite.config.ts README.md render.yaml .gitignore src
-git commit -m "Add realtime room chat app"
-git push origin main
+npm run start
 ```
 
-Do not commit:
+Open
+
+```
+http://localhost:8080
+```
+
+---
+
+# 💬 How It Works
 
 ```text
-node_modules/
-dist/
-tsconfig.tsbuildinfo
+Create Room
+      │
+      ▼
+Share Room ID
+      │
+      ▼
+Friend Joins Same Room
+      │
+      ▼
+Realtime Chat Begins
 ```
 
-## Scripts
+---
+
+# 📦 Scripts
 
 | Command | Description |
-| --- | --- |
-| `npm run dev` | Runs Vite frontend dev server |
-| `npm run build` | Builds the frontend |
-| `npm run server` | Runs the Node WebSocket server |
-| `npm run start` | Builds and starts the production server |
+|----------|-------------|
+| npm run dev | Starts Vite development server |
+| npm run build | Builds the frontend |
+| npm run server | Starts WebSocket backend |
+| npm run start | Runs production build |
 
-## Notes
+---
 
-- People must join the same room ID to chat together.
-- The deployed app should be opened from the Render Web Service URL.
-- If the app says disconnected, check that the Node server is running.
+# 🚀 Deploy
+
+This application requires a Node.js server because WebSockets cannot run on a static hosting service.
+
+Recommended hosting:
+
+- Render
+- Railway
+- Fly.io
+
+### Render Configuration
+
+Build Command
+
+```bash
+npm install && npm run build
 ```
+
+Start Command
+
+```bash
+npm run server
+```
+
+The included **render.yaml** can also be used for automatic deployment.
+
+---
+
+# ⚙️ Tech Overview
+
+| Layer | Technology |
+|--------|------------|
+| Frontend | React |
+| Language | TypeScript |
+| Bundler | Vite |
+| Backend | Node.js |
+| Realtime | Native WebSockets (`ws`) |
+
+---
+
+# 📸 Main Features
+
+- Create Room
+- Join Room
+- Share Room ID
+- Realtime Messaging
+- Online Users
+- Responsive Design
+- Dark Theme
+- Production Build
+
+---
+
+# 📝 Notes
+
+- Both users must join the same Room ID.
+- The backend server must be running for WebSocket communication.
+- GitHub Pages cannot host this application because it requires a Node.js server.
+- Deploy the project as a Web Service instead of a Static Site.
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+---
+
+<p align="center">
+
+Made with ❤️ using React, TypeScript, Vite, Node.js and WebSockets.
+
+</p>
